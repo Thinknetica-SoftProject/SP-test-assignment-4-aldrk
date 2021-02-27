@@ -10,4 +10,18 @@
 #
 ## Решение:
 
+result = 0
+
+file = File.new('./data/3.txt', "r:UTF-8")
+content = file.readlines
+
+content.each do |string|
+  string = string.split(' ').map(&:to_i)
+
+  difference = string.max - string.min
+
+  result += difference
+end
+
+puts result
 

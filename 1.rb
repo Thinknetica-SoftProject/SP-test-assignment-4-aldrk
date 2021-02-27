@@ -15,7 +15,21 @@
 #
 #
 ## Решение:
+#
+#
+floor = 0
 
+file = File.new('./data/1.txt', "r:UTF-8")
+content = file.read
 
+content.each_char do |c|
+  if c == '('
+    floor += 1
+  else
+    floor -= 1
+  end
+end
+
+puts floor
 
 
