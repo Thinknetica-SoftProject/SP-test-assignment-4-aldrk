@@ -25,7 +25,7 @@ content = file.read
 content.each_char do |c|
   if c == '('
     floor += 1
-  else
+  elsif c == ')'
     floor -= 1
   end
 end
