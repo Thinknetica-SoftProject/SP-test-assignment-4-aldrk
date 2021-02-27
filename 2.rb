@@ -16,3 +16,19 @@
 #
 ## Решение:
 
+require 'digest/md5'
+
+user_input = gets.chomp.to_s
+result = 1
+
+loop do
+  full_input = user_input + result.to_s
+
+  md5 = Digest::MD5.hexdigest full_input
+
+  break if md5[0..4] == '00000'
+
+  result += 1
+end
+
+puts result
