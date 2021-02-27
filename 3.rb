@@ -10,10 +10,9 @@
 #
 ## Решение:
 
-result = 0
+content = File.new('./data/3.txt', "r:UTF-8").readlines
 
-file = File.new('./data/3.txt', "r:UTF-8")
-content = file.readlines
+result = 0
 
 content.each do |string|
   string = string.split(' ').map(&:to_i)

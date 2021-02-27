@@ -19,8 +19,7 @@
 #
 floor = 0
 
-file = File.new('./data/1.txt', "r:UTF-8")
-content = file.read
+content = File.new('./data/1.txt', "r:UTF-8").read
 
 content.each_char do |c|
   if c == '('

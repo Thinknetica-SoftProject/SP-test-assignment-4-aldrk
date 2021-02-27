@@ -16,4 +16,22 @@
 #
 ## Решение:
 
+content = File.new('./data/4.txt', "r:UTF-8").readlines
 
+result = 0
+
+def define_sides(str)
+  str.split('x').map(&:to_i).sort!
+end
+
+def calc_square(length, width, height)
+  2 * width * length + 2 * length * height + 2 * height * width + length * width
+end
+
+content.each do |c|
+  sides = define_sides(c)
+
+  result += calc_square(sides[0], sides[1], sides[2])
+end
+
+puts result
